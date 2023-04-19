@@ -1,0 +1,8 @@
+h1{
+    color:blue;
+}
+body{
+    background-image: url("/static/images/autumn-photo-wall-art-m.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<h1><u>Student information</u></h1>
+<table class="table table-info">
+
+    <thead class="table-dark">
+    <tr style="color: #d63384">
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>email</th>
+        <th>action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for student in students %}
+    <tr style ="font-size: 30px;color: #0d6efd">
+    <td>{{ student.firstname }}</td>
+    <td>{{ student.lastname }}</td>
+    <td>{{ student.email }}</td>
+    <td>
+        <a href="edit/{{ student.id }}" class="btn btn-warning">EDIT</a>
+        <a href="delete/{{ student.id }}" class="btn btn-info">DELETE</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+<a href="/index" class="btn btn-warning">add new student</a>
+</body>
+</html>

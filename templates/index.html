@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <style>
+        form{
+            background-color: black;
+font-size: 30px;
+
+        }
+        h1{
+            font-size: 50px;
+            color: #842029;
+        }
+    </style>
+</head>
+<body>
+<form method="POST"   action="/index/">
+<h1><u>Enter Student Details</u></h1>
+
+    {% csrf_token %}
+<div style="color: #17e121" class="row">
+    <div class="col">
+        <label for="fname">student firstname</label>
+    </div>
+    <div class="col">
+        {{ form.firstname }}
+    </div>
+
+</div>
+
+<div style="color: #17e121" class="row">
+    <div class="col">
+        <label for="lname">student lastname</label>
+    </div>
+    <div class="col">
+        {{ form.lastname }}
+    </div>
+
+</div>
+    <div style="color: #17e121" class="row">
+      <div class="col">
+        <label for="fname">student Email</label>
+      </div>
+      <div class="col">
+        {{ form.email }}
+      </div>
+
+</div>
+
+    <button style="color: #25cff2;background-color: yellow" type="submit">submit</button>
+</form>
+</head>
+</body>
+</html>

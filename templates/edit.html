@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<body>
+<h1><u>editing sector</u></h1>
+<fieldset>
+<form  method ="post" action="/update/{{ student.id }}">
+    {% csrf_token %}
+<label for="fname" class="form-label">firstname</label>
+<input type="text"  id="fname" class="form-control" name="firstname" value="{{ student.firstname }} ">
+
+<label for="lname" class="form-label">lastname</label>
+<input type="text"   class="form-control" id="lname" name="lastname" value="{{student.lastname }} ">
+
+    <label for="email" class="form-label">firstname</label>
+<input type="text"  class="form-control" id="email" name="email" value="{{student.email  }} " >
+
+    <button type="submit">Update</button>
+</form>
+</fieldset>
+ </body>
+</html>
